@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato — Salão da Netinha</title>
+  <meta name="description" content="Entre em contato com o Salão da Netinha. Endereço, telefone, WhatsApp e horário de funcionamento."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Página inicial">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="./img/Logo2.png" alt="Logo do Salão da Netinha" class="brand-img">
+        </span>
+        <span>Salão da Netinha</span>
+      </a>
+      
+      <!-- Menu hambúrguer para mobile -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-actions" id="nav-actions">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="Sobrenos.html" class="nav-link">Sobre nós</a>
+        <a href="Login.html" class="nav-link" id="login-link" style="display: none;">Login</a>
+        <button class="nav-link" id="btn-sair-contato" style="display: none;">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Contato -->
+  <main class="container contato-content">
+    <h1 class="page-title">Contato</h1>
+    <p class="intro-text">
+      Estamos sempre prontos para atendê-la! Entre em contato conosco para agendar seus serviços 
+      ou esclarecer qualquer dúvida. Sua beleza e bem-estar são nossa prioridade.
+    </p>
+
+    <div class="contato-grid">
+      <!-- Informações de Contato -->
+      <div class="contato-info">
+        <h2 class="section-title">Informações de Contato</h2>
+        
+        <div class="contato-item">
+          <i class="fas fa-map-marker-alt contato-icon"></i>
+          <div>
+            <h3>Endereço</h3>
+            <p>Rua Comari, 250<br>Campo Grande </p>
+          </div>
+        </div>
+
+        <div class="contato-item">
+          <i class="fas fa-phone contato-icon"></i>
+          <div>
+            <h3>Telefone</h3>
+            <p><a href="tel:+5521969860195">(21) 96986-0195</a></p>
+          </div>
+        </div>
+
+        <div class="contato-item">
+          <i class="fab fa-whatsapp contato-icon whatsapp-icon"></i>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>
+              <a href="https://wa.me/5521969860195?text=Olá! Gostaria de agendar um horário no Salão da Netinha." 
+                 target="_blank" class="whatsapp-link">
+                (21) 96986-0195
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contato-item">
+          <i class="fas fa-envelope contato-icon"></i>
+          <div>
+            <h3>E-mail</h3>
+            <p><a href="mailto:contato@salaodanetinha.com.br">contato@salaodanetinha.com.br</a></p>
+          </div>
+        </div>
+
+        <div class="contato-item">
+          <i class="fas fa-clock contato-icon"></i>
+          <div>
+            <h3>Horário de Funcionamento</h3>
+            <p>
+              <strong>Segunda a Sábado:</strong> 09:00 - 19:00<br>
+              <strong>Domingo:</strong> Fechado
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário de Contato -->
+      <div class="contato-form">
+        <h2 class="section-title">Envie uma Mensagem</h2>
+        
+        <form id="form-contato" class="form-contato">
+          <div class="form-group">
+            <label for="nome-contato">Nome Completo</label>
+            <input type="text" id="nome-contato" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email-contato">E-mail</label>
+              <input type="email" id="email-contato" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone-contato">Telefone</label>
+              <input type="tel" id="telefone-contato" placeholder="(21) 96986-0195">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="assunto-contato">Assunto</label>
+            <select id="assunto-contato" required>
+              <option value="">Selecione um assunto</option>
+              <option value="agendamento">Agendamento</option>
+              <option value="duvidas">Dúvidas sobre serviços</option>
+              <option value="precos">Informações sobre preços</option>
+              <option value="reclamacao">Reclamação</option>
+              <option value="elogio">Elogio</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem-contato">Mensagem</label>
+            <textarea id="mensagem-contato" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Enviar Mensagem
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5521969860195?text=Olá! Gostaria de agendar um horário no Salão da Netinha." 
+       target="_blank" class="whatsapp-btn" title="Fale conosco no WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="grid" style="display:flex; justify-content:center;">
+        <div class="col-6" style="max-width:720px;">
+          <strong>Salão da Netinha</strong>
+          <div class="note">CNPJ 00.000.000/0001-00 • Rua Comari, 250 — Campo Grande </div>
+          <div class="note">Atendimento: seg–sáb 09:00–19:00</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // VERIFICAR STATUS DE LOGIN
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || 'null');
+    const loginLink = document.getElementById('login-link');
+    const btnSair = document.getElementById('btn-sair-contato');
+    
+    if (usuarioLogado) {
+      // Usuário logado - mostrar botão Sair
+      btnSair.style.display = 'inline-block';
+      loginLink.style.display = 'none';
+    } else {
+      // Usuário não logado - mostrar botão Login
+      btnSair.style.display = 'none';
+      loginLink.style.display = 'inline-block';
+    }
+    
+    // FUNCIONALIDADE DO BOTÃO SAIR
+    btnSair?.addEventListener('click', () => {
+      localStorage.removeItem('usuarioLogado');
+      window.location.href = 'Login.html';
+    });
+
+    // FORMULÁRIO DE CONTATO
+    document.getElementById('form-contato').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nome = document.getElementById('nome-contato').value;
+      const email = document.getElementById('email-contato').value;
+      const telefone = document.getElementById('telefone-contato').value;
+      const assunto = document.getElementById('assunto-contato').value;
+      const mensagem = document.getElementById('mensagem-contato').value;
+      
+      // Simular envio
+      alert(`Mensagem enviada com sucesso!\n\nObrigada pelo contato, ${nome}. Retornaremos em breve!`);
+      
+      // Limpar formulário
+      this.reset();
+    });
+    
+    // MENU HAMBÚRGUER MOBILE
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const navActions = document.getElementById('nav-actions');
+      
+      if (mobileMenuToggle && navActions) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          navActions.classList.toggle('show');
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = navActions.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navActions.classList.remove('show');
+          });
+        });
+        
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            mobileMenuToggle.classList.remove('active');
+            navActions.classList.remove('show');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

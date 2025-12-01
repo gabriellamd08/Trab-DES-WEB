@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salão da Netinha — Sobre Nós</title>
+  <meta name="description" content="Conheça o Salão da Netinha — um espaço de beleza, cuidado e autoestima. Veja nossa história, missão e o carinho por trás de cada atendimento."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="Stylesobrenos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Página inicial">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="./img/Logo2.png" alt="Logo do Salão da Netinha" class="brand-img">
+        </span>
+        <span>Salão da Netinha</span>
+      </a>
+      
+      <!-- Menu hambúrguer para mobile -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-actions" id="nav-actions">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+        <a href="Login.html" class="nav-link" id="login-link" style="display: none;">Login</a>
+        <button class="nav-link" id="btn-sair-sobre" style="display: none;">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Sobre Nós -->
+  <main class="container sobre-content">
+    <h1 class="page-title">Sobre Nós</h1>
+    <p class="intro-text">
+      No <strong>Salão da Netinha</strong>, acreditamos que beleza é muito mais do que aparência — 
+      é sobre confiança, bem-estar e autoestima.  
+      Fundado com amor e dedicação, o salão nasceu com o propósito de oferecer um ambiente acolhedor, 
+      moderno e totalmente voltado para o seu cuidado.
+    </p>
+
+    <section class="sobre-section">
+      <h2 class="section-title">Nossa Missão</h2>
+      <p class="section-text">
+        Proporcionar experiências únicas em beleza, combinando técnicas profissionais, produtos de alta qualidade 
+        e um atendimento humano e personalizado para cada cliente.
+      </p>
+    </section>
+
+    <section class="sobre-section">
+      <h2 class="section-title">Nossos Valores</h2>
+      <ul class="valores-list">
+        <li><strong>Respeito e cuidado</strong> em cada atendimento</li>
+        <li><strong>Profissionalismo</strong> com constante atualização e técnica</li>
+        <li><strong>Ambiente acolhedor</strong> e inspirador</li>
+        <li><strong>Compromisso com qualidade</strong> e produtos seguros</li>
+      </ul>
+    </section>
+
+    <section class="sobre-section">
+      <h2 class="section-title">Nosso Espaço</h2>
+      <p class="section-text">
+        Um local pensado para relaxar e se sentir bem.  
+        Cada detalhe do nosso salão foi planejado para que você tenha uma experiência 
+        completa de conforto, carinho e beleza.
+      </p>
+      <div class="image-container">
+        <img src="./img/foto salao.jpg" alt="Foto do Salão da Netinha" class="salao-image">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center; padding:24px 20px;">
+    <div class="container">
+      <div class="grid" style="display:flex; justify-content:center;">
+        <div class="col-6" style="max-width:720px;">
+          <strong>Salão da Netinha</strong>
+          <div class="note">CNPJ 00.000.000/0001-00 • Rua comari , 250 — Campo Grande </div>
+          <div class="note">Atendimento: seg–sáb 09:00–19:00</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // VERIFICAR STATUS DE LOGIN
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || 'null');
+    const loginLink = document.getElementById('login-link');
+    const btnSair = document.getElementById('btn-sair-sobre');
+    
+    if (usuarioLogado) {
+      // Usuário logado - mostrar botão Sair
+      btnSair.style.display = 'inline-block';
+      loginLink.style.display = 'none';
+    } else {
+      // Usuário não logado - mostrar botão Login
+      btnSair.style.display = 'none';
+      loginLink.style.display = 'inline-block';
+    }
+    
+    // FUNCIONALIDADE DO BOTÃO SAIR
+    btnSair?.addEventListener('click', () => {
+      localStorage.removeItem('usuarioLogado');
+      window.location.href = 'Login.html';
+    });
+    
+    // MENU HAMBÚRGUER MOBILE
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const navActions = document.getElementById('nav-actions');
+      
+      if (mobileMenuToggle && navActions) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          navActions.classList.toggle('show');
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = navActions.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navActions.classList.remove('show');
+          });
+        });
+        
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            mobileMenuToggle.classList.remove('active');
+            navActions.classList.remove('show');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
